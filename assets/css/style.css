@@ -119,7 +119,8 @@ i {
 
 .gameboard {
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   position: relative; 
   }
 
@@ -173,43 +174,91 @@ i {
       border: 10px solid; }
        }
 
+/* Green / Red / Blue / Yellow Panels */
+
 .panel#green {
-  bottom: 0;
-  left: 0;
-  border-color: #34a853;
+    padding: 5px;
+    bottom: 0;
+    left: 0;
+    border-color: #34a853;
    }
 
 .panel#red {
-  top: 0;
-  right: 0;
-  border-color: #ea4335;
+    top: 0;
+    right: 0;
+    border-color: #ea4335;
    }
 
 .panel#blue {
-  bottom: 0;
-  right: 0;
-  border-color: #4285f4; 
+    padding: 5px;  
+    bottom: 0;
+    right: 0;
+    border-color: #4285f4; 
   }
 
 .panel#yellow {
-  top: 0;
-  left: 0;
-  border-color: #fbbc05; }
+    top: 0;
+    left: 0;
+    border-color: #fbbc05; 
+}
 
 .panel#green:active, .panel.lit#green {
-  background-color: rgba(52, 168, 83, 0.9);
+    background-color: rgba(52, 168, 83, 0.9);
    }
 
 .panel#red:active, .panel.lit#red {
-  background-color: rgba(234, 67, 53, 0.9);
+    background-color: rgba(234, 67, 53, 0.9);
    }
 
 .panel#blue:active, .panel.lit#blue {
-  background-color: rgba(66, 133, 244, 0.9);
+    background-color: rgba(66, 133, 244, 0.9);
    }
 
 .panel#yellow:active, .panel.lit#yellow {
-  background-color: rgba(251, 188, 5, 0.9);
+    background-color: rgba(251, 188, 5, 0.9);
    }
 
+/* Status Bar */
 
+.status-bar {
+    text-align: center;  
+    margin-top: 5px;
+    margin: 0 auto;
+    font-weight: bold; 
+  }
+
+@media (min-width: 320px) {
+    .status-bar {
+    font-size: 13px; }
+       }
+
+@media (min-width: 369px) {
+    .status-bar {
+    font-size: 15px; }
+       }
+
+@media (min-width: 768px) {
+    .status-bar {
+    font-size: 16px; } 
+      }
+
+@media (min-width: 1024px) {
+    .status-bar {
+    font-size: 16px; }
+       }
+
+/* Footer */
+    .footer-text {
+    font-family: "Alpha Slab One", sans-serif;
+    font-weight: 80%;
+    letter-spacing: 1px;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+ }
+
+    .footer-text a:hover,
+    .footer-text a:focus {
+    text-decoration: none; 
+    color: #F26B38;
+  }
