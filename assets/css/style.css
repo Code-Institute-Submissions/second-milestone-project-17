@@ -3,18 +3,24 @@
 body {
   margin: 0;
   font-family: "Alfa Slab One", "sans-serif";
-  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/dark_wall.png");
+  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/concrete_wall.png");
   color: #fff;
   text-shadow: black 1px 0 10px; }
   @media (min-width: 320px) {
     body {
-      font-size: 15px; } }
+      font-size: 15px; }
+       }
+
   @media (min-width: 369px) {
     body {
-      font-size: 20px; } }
+      font-size: 20px; }
+       }
+
   @media (min-width: 768px) {
     body {
-      font-size: 25px; } }
+      font-size: 25px; }
+       }
+
   @media (min-width: 1024px) {
     body {
       font-size: 30px; } 
@@ -83,16 +89,23 @@ i {
   display: inline-block; }
   @media (min-width: 320px) {
     .nav {
-      margin: 5px 5px; } }
+      margin: 5px 5px; } 
+      }
+
   @media (min-width: 369px) {
     .nav {
-      margin: 12px 12px; } }
+      margin: 12px 12px; }
+       }
+
   @media (min-width: 768px) {
     .nav {
-      margin: 0 42px; } }
+      margin: 0 42px; }
+       }
+
   @media (min-width: 1024px) {
     .nav {
-      margin: 0 92px; } }
+      margin: 0 92px; }
+       }
 
 .start-btn {
   cursor: pointer;
@@ -112,13 +125,91 @@ i {
 
   @media (min-width: 320px) {
     .gameboard {
-      height: 295px;
-      width: 295px; } }
+      width: 295px;
+      height: 295px; }
+       }
+
   @media (min-width: 369px) {
     .gameboard {
-      height: 340px;
-      width: 340px; } }
+      width: 340px;
+      height: 340px; }
+       }
+
   @media (min-width: 1024px) {
     .gameboard {
-      height: 420px;
-      width: 420px; } }
+       width: 420px;
+       height: 420px;} 
+      }
+
+.panel {
+  border-radius: 100%;
+  display: inline-block;
+  position: absolute;
+  cursor: pointer;
+  animation-duration: 0.75s;
+  -webkit-animation-duration: 0.75s;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+   }
+
+
+  @media (min-width: 320px) {
+    .panel {
+      width: 120px;
+      height: 120px;
+      border: 8px solid; }
+       }
+
+  @media (min-width: 369px) {
+    .panel {
+      width: 135px;  
+      height: 135px;
+      border: 9px solid; } 
+      }
+
+  @media (min-width: 1024px) {
+    .panel {
+      width: 170px;  
+      height: 170px; 
+      border: 10px solid; }
+       }
+
+.panel#green {
+  bottom: 0;
+  left: 0;
+  border-color: #34a853;
+   }
+
+.panel#red {
+  top: 0;
+  right: 0;
+  border-color: #ea4335;
+   }
+
+.panel#blue {
+  bottom: 0;
+  right: 0;
+  border-color: #4285f4; 
+  }
+
+.panel#yellow {
+  top: 0;
+  left: 0;
+  border-color: #fbbc05; }
+
+.panel#green:active, .panel.lit#green {
+  background-color: rgba(52, 168, 83, 0.9);
+   }
+
+.panel#red:active, .panel.lit#red {
+  background-color: rgba(234, 67, 53, 0.9);
+   }
+
+.panel#blue:active, .panel.lit#blue {
+  background-color: rgba(66, 133, 244, 0.9);
+   }
+
+.panel#yellow:active, .panel.lit#yellow {
+  background-color: rgba(251, 188, 5, 0.9);
+   }
+
+
