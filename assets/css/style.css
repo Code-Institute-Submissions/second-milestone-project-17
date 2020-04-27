@@ -20,6 +20,7 @@ body {
       font-size: 30px; } 
       }
 
+ /* Header */
 
 .nav-wrapper .btn {
   margin-top: 5px;
@@ -60,6 +61,12 @@ a:hover {
         color: #fff;
     }
 
+i {
+    font-size: 80%;
+}
+
+/* Container */
+
 .container {
   overflow: hidden;
   margin: 0 auto;
@@ -95,6 +102,3 @@ a:hover {
   cursor: pointer; 
   }
 
-i {
-    font-size: 80%;
-}
