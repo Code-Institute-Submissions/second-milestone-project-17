@@ -8,16 +8,16 @@ body {
   text-shadow: black 1px 0 10px; }
   @media (min-width: 320px) {
     body {
-      font-size: 1.2em; } }
+      font-size: 15px; } }
   @media (min-width: 369px) {
     body {
-      font-size: 1.25em; } }
+      font-size: 20px; } }
   @media (min-width: 768px) {
     body {
-      font-size: 1.4em; } }
+      font-size: 25px; } }
   @media (min-width: 1024px) {
     body {
-      font-size: 1.6em; } 
+      font-size: 30px; } 
       }
 
 
@@ -30,7 +30,6 @@ body {
   font-size: 30px;
   background: none;
   border: none;
-  
   }
 
 .nav-wrapper .btn:hover,
@@ -78,16 +77,16 @@ a:hover {
   display: inline-block; }
   @media (min-width: 320px) {
     .nav {
-      margin: 15px 15px; } }
+      margin: 5px 5px; } }
   @media (min-width: 369px) {
     .nav {
-      margin: 15px 15px; } }
+      margin: 12px 12px; } }
   @media (min-width: 768px) {
     .nav {
-      margin: 0 45px; } }
+      margin: 0 42px; } }
   @media (min-width: 1024px) {
     .nav {
-      margin: 0 95px; } }
+      margin: 0 92px; } }
 
 .start-btn {
   cursor: pointer; 
@@ -97,4 +96,6 @@ a:hover {
   cursor: pointer; 
   }
 
-  
+i {
+    font-size: 80%;
+}
