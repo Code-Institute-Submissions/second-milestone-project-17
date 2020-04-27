@@ -6,6 +6,7 @@ body {
   background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/concrete_wall.png");
   color: #fff;
   text-shadow: black 1px 0 10px; }
+
   @media (min-width: 320px) {
     body {
       font-size: 15px; }
@@ -23,7 +24,7 @@ body {
 
   @media (min-width: 1024px) {
     body {
-      font-size: 30px; } 
+      font-size: 25px; } 
       }
 
  /* Header */
@@ -109,10 +110,12 @@ i {
 
 .start-btn {
   cursor: pointer;
+  color: #fff;
   }
 
 .strict-btn {
-  cursor: pointer; 
+  cursor: pointer;
+  color: #fff; 
   }
 
 /* Gameboard */
