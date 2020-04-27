@@ -95,10 +95,30 @@ i {
       margin: 0 92px; } }
 
 .start-btn {
-  cursor: pointer; 
+  cursor: pointer;
   }
 
 .strict-btn {
   cursor: pointer; 
   }
 
+/* Gameboard */
+
+.gameboard {
+  margin: 0 auto;
+  margin-top: 10px;
+  position: relative; 
+  }
+
+  @media (min-width: 320px) {
+    .gameboard {
+      height: 295px;
+      width: 295px; } }
+  @media (min-width: 369px) {
+    .gameboard {
+      height: 340px;
+      width: 340px; } }
+  @media (min-width: 1024px) {
+    .gameboard {
+      height: 420px;
+      width: 420px; } }
