@@ -1,1 +1,100 @@
-@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One:100,200,300,400,500,600,700,800,900");
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+body {
+  margin: 0;
+  font-family: "Alfa Slab One", "sans-serif";
+  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/dark_wall.png");
+  color: #fff;
+  text-shadow: black 1px 0 10px; }
+  @media (min-width: 320px) {
+    body {
+      font-size: 1.2em; } }
+  @media (min-width: 369px) {
+    body {
+      font-size: 1.25em; } }
+  @media (min-width: 768px) {
+    body {
+      font-size: 1.4em; } }
+  @media (min-width: 1024px) {
+    body {
+      font-size: 1.6em; } 
+      }
+
+
+.nav-wrapper .btn {
+  margin-top: 5px;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;   
+  letter-spacing: 1px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  
+  }
+
+.nav-wrapper .btn:hover,
+.nav-wrapper .btn:focus {
+  text-decoration: none;
+  color: #F26B38;
+  background: none;
+  border: none;
+  box-shadow: none; 
+  }
+
+.nav-container {
+    margin-top: 10px;
+    padding: 0;
+}
+
+.nav-heading {
+    margin: 0;
+}
+ 
+
+a {
+    color:#fff;
+}
+
+a:hover {
+        text-decoration: none;
+        color: #fff;
+    }
+}
+
+.container {
+  overflow: hidden;
+  margin: 0 auto;
+   }
+
+.top-panel {
+  text-align: center;
+  margin: 0 auto;
+  animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s; 
+  }
+
+ .nav {
+  display: inline-block; }
+  @media (min-width: 320px) {
+    .nav {
+      margin: 15px 15px; } }
+  @media (min-width: 369px) {
+    .nav {
+      margin: 15px 15px; } }
+  @media (min-width: 768px) {
+    .nav {
+      margin: 0 45px; } }
+  @media (min-width: 1024px) {
+    .nav {
+      margin: 0 95px; } }
+
+.start-btn {
+  cursor: pointer; 
+  }
+
+.strict-btn {
+  cursor: pointer; 
+  }
+
+  
