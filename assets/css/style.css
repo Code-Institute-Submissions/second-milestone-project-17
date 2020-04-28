@@ -182,13 +182,13 @@ i {
       border: 10px solid; }
        }
 
-/* Green / Red / Blue / Yellow Panels */
+/* Green / Yellow / Red / Blue Panels */
 
-.panel#green {
+.panel#yellow {
     padding: 5px;
     bottom: 0;
     left: 0;
-    border-color: #2daf4f;
+    border-color: #f3b703;
    }
 
 .panel#red {
@@ -204,10 +204,10 @@ i {
     border-color: #3c7de6; 
   }
 
-.panel#yellow {
+.panel#green {
     top: 0;
     left: 0;
-    border-color: #f3b703; 
+    border-color: #2daf4f;
 }
 
 .panel#green:active, .panel.lit#green {
@@ -257,6 +257,7 @@ i {
        }
 
 /* Footer */
+
     .footer-text {
     font-family: "Alpha Slab One", sans-serif;
     font-size: 50%;
@@ -266,7 +267,7 @@ i {
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 16px;
+    padding: 20px;
     
  }
 
