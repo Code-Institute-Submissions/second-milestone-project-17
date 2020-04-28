@@ -16,3 +16,23 @@ const gameboard = ['green', 'yellow', 'blue', 'red'];
 const roundStatus = $(".round-status");
 
 
+
+let strict = false;
+let sound = true;
+//--Volume ON/OFF
+$(volBtn).click(function() {
+    if (sound) {
+        sound = false;
+        $(this).toggleClass("fa-volume-mute");
+        $(this).toggleClass("fa-volume-up");
+        
+    }
+    else {
+        sound = true;
+        play(clickOnSound);
+        $(this).toggleClass("fa-volume-mute");
+        $(this).toggleClass("fa-volume-up");
+    }
+});
+
+
