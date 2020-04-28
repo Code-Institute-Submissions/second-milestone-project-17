@@ -6,13 +6,13 @@ const blueBtnSound = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound
 const wrongSound = new Audio("http://res.cloudinary.com/thisiswhale/video/upload/v1518937949/142608__autistic-lucario__error_vcwlt0.wav");
 const winSound = new Audio("http://res.cloudinary.com/thisiswhale/video/upload/v1518166335/Regular_Show__OOOOOOOOOOOOOOOOOOOOHHHHHHHHH_qlwzvh.mp3");
 
-const volBtn = document.querySelector('volume-btn');
-const btn = document.getElementsByClassName('btn');
-const strictBtn = document.querySelector('.strict-btn');
-const startBtn = document.querySelector('.start-btn');
-const statusBox = document.querySelector('.status-bar')
-const panels = document.getElementsByClassName('panel');
+const volBtn = $("#volume-btn");
+const btn = $(".btn");
+const strictBtn = $(".strict-btn");
+const startBtn = $(".start-btn");
+const statusBox = $(".status-bar");
+const panels = $(".panel");
 const gameboard = ['green', 'yellow', 'blue', 'red'];
-const roundStatus = document.querySelector('.round-status');
+const roundStatus = $(".round-status");
 
 
