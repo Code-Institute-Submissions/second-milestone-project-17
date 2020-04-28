@@ -29,7 +29,6 @@ $(volBtn).click(function() {
     }
     else {
         sound = true;
-        play(clickOnSound);
         $(this).toggleClass("fa-volume-mute");
         $(this).toggleClass("fa-volume-up");
     }
