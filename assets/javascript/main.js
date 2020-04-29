@@ -14,9 +14,12 @@ const statusBox = $(".status-bar");
 const panels = $(".panel");
 const gameboard = ['green', 'yellow', 'blue', 'red'];
 const roundStatus = $(".round-status");
+const totalRound = 20;
+const animationDuration = 500;
 
-
-
+let simonMemory = [];
+let counterRound = 1;
+let thisSequence = 0;
 let strict = false;
 let sound = true;
 //--Mouseover and mouseout function on buttons which are pulsing
@@ -32,8 +35,6 @@ for (let i = 0; i < btn.length; i++) {
   });
 }
    
-
-
 
 //--Volume ON/OFF
 $(volBtn).click(function() {
