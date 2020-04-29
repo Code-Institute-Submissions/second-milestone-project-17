@@ -19,6 +19,22 @@ const roundStatus = $(".round-status");
 
 let strict = false;
 let sound = true;
+//--Mouseover and mouseout function on buttons which are pulsing
+for (let i = 0; i < btn.length; i++) {
+    btn[i].addEventListener('mouseover', function() {
+    btn[i].classList.add('animated', 'infinite', 'pulse')
+    console.log("mouseover");
+  });
+
+    btn[i].addEventListener('mouseout', function() {
+    btn[i].classList.remove('animated', 'infinite', 'pulse')
+    console.log("mouseout");
+  });
+}
+   
+
+
+
 //--Volume ON/OFF
 $(volBtn).click(function() {
     if (sound) {
@@ -35,5 +51,7 @@ $(volBtn).click(function() {
         console.log("sound", sound);
     }
 });
+
+
 
 
