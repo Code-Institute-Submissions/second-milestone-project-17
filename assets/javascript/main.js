@@ -26,12 +26,12 @@ let sound = true;
 for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener('mouseover', function() {
     btn[i].classList.add('animated', 'infinite', 'pulse')
-    console.log("mouseover");
+    //--console.log("mouseover");
   });
 
     btn[i].addEventListener('mouseout', function() {
     btn[i].classList.remove('animated', 'infinite', 'pulse')
-    console.log("mouseout");
+    //--console.log("mouseout");
   });
 }
    
@@ -42,17 +42,26 @@ $(volBtn).click(function() {
         sound = false;
         $(this).toggleClass("fa-volume-mute");
         $(this).toggleClass("fa-volume-up");
-        console.log("sound", sound);
+        //--console.log("sound", sound);
         
     }
     else {
         sound = true;
         $(this).toggleClass("fa-volume-mute");
         $(this).toggleClass("fa-volume-up");
-        console.log("sound", sound);
+        //--console.log("sound", sound);
     }
 });
 
+ 
+//--Start game 
+function startGame() {
+    startBtn.classList.add('animated', 'heartBeat');
+    window.setTimeout(function() {
+    startBtn.classList.remove('animated', 'heartBeat');
+  }, animationDuration);
 
+ 
 
+ 
 
