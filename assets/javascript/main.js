@@ -61,14 +61,7 @@ function startGame() {
     startBtn.classList.remove('animated', 'heartBeat');
   }, animationDuration);
 
- //--Start game 
-function startGame() {
-    startBtn.classList.add('animated', 'heartBeat');
-    window.setTimeout(function() {
-    startBtn.classList.remove('animated', 'heartBeat');
-  }, animationDuration);
 
- 
 //--Strict mode
   function strictMode() {
     if (strict) {
