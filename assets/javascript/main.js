@@ -61,7 +61,32 @@ function startGame() {
     startBtn.classList.remove('animated', 'heartBeat');
   }, animationDuration);
 
+ //--Start game 
+function startGame() {
+    startBtn.classList.add('animated', 'heartBeat');
+    window.setTimeout(function() {
+    startBtn.classList.remove('animated', 'heartBeat');
+  }, animationDuration);
+
  
+//--Strict mode
+  function strictMode() {
+    if (strict) {
+    strict = false
+    strictBtn.classList.add('animated', 'rubberBand');
+    strictBtn.classList.remove('on');
+    window.setTimeout(function() {
+      strictBtn.classList.remove('animated', 'rubberBand');
+    }, 1000);
+
+  } else {
+    strict = true
+    strictBtn.classList.add('on', 'animated', 'rubberBand');
+    window.setTimeout(function() {
+      strictBtn.classList.remove('animated', 'rubberBand');
+    }, 1000);
+  }
+}
 
  
 
