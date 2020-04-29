@@ -25,12 +25,14 @@ $(volBtn).click(function() {
         sound = false;
         $(this).toggleClass("fa-volume-mute");
         $(this).toggleClass("fa-volume-up");
+        console.log("sound", sound);
         
     }
     else {
         sound = true;
         $(this).toggleClass("fa-volume-mute");
         $(this).toggleClass("fa-volume-up");
+        console.log("sound", sound);
     }
 });
 
