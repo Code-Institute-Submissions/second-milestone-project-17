@@ -85,6 +85,13 @@ function startGame() {
       $(".strict-btn").removeClass('animated', 'rubberBand');
     }, 1000);
   }
+};
+//--Colour panels green, yellow, blue, green by id
+function getPanel() {
+    const color = this.getAttribute('id');
+    playSound(color);
+    lightUp(color);
+    checkPattern(color);
 }
 
  
