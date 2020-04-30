@@ -22,6 +22,12 @@ let counterRound = 1;
 let thisSequence = 0;
 let strict = false;
 let sound = true;
+const levels = {
+  round1: {roundSpeed: 950, soundSpeed: 0.75, animateSpeed: '0.75s'},
+  round5: {roundSpeed: 750, soundSpeed: 1.0, animateSpeed: '0.65s'},
+  round10: {roundSpeed: 550,soundSpeed: 1.25, animateSpeed: '0.55s'},
+  round15: {roundSpeed: 450,soundSpeed: 1.30, animateSpeed: '0.50s'},
+};
 //--Mouseover and mouseout function on buttons which are pulsing
 for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener('mouseover', function() {
@@ -56,27 +62,27 @@ $(volBtn).click(function() {
  
 //--Start game 
 function startGame() {
-    startBtn.classList.add('animated', 'heartBeat');
+    $(".start-btn").addClass('animated', 'heartBeat');
     window.setTimeout(function() {
-    startBtn.classList.remove('animated', 'heartBeat');
+    $(".start-btn").removeClass('animated', 'heartBeat');
   }, animationDuration);
 
 
 //--Strict mode
   function strictMode() {
     if (strict) {
-    strict = false
-    strictBtn.classList.add('animated', 'rubberBand');
-    strictBtn.classList.remove('on');
+    strict = false;
+     $(".strict-btn").addClass('animated', 'rubberBand'); 
+     $(".strict-btn").removeClass('on');
     window.setTimeout(function() {
-      strictBtn.classList.remove('animated', 'rubberBand');
+     $(".strict-btn").removeClass('animated', 'rubberBand');
     }, 1000);
 
   } else {
-    strict = true
-    strictBtn.classList.add('on', 'animated', 'rubberBand');
+    strict = true;
+    $(".strict-btn").addClass('on', 'animated', 'rubberBand');
     window.setTimeout(function() {
-      strictBtn.classList.remove('animated', 'rubberBand');
+      $(".strict-btn").removeClass('animated', 'rubberBand');
     }, 1000);
   }
 }
