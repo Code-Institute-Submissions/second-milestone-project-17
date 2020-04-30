@@ -93,6 +93,32 @@ function getPanel() {
     lightUp(color);
     checkPattern(color);
 }
+//--
+function allowClickEvent() {
+    for (let i = 0; i < panels.length; i++) {
+    panels[i].addEventListener('click', getPanel);
+  }
+};
 
+function blockClickEvent() {
+    for (let i = 0; i < panels.length; i++) {
+    panels[i].removeEventListener('click', getPanel);
+  }
+};
+
+function newRound() {
+  const randomNum = Math.floor(Math.random() * 3);
+  simonMemory.push(gameboard[randomNum]);
+  animate(simonMemory)
+}
+
+setDifficulty(levels.round1)
+  simonMemory;
+  counterRound;
+  thisSequence;
+  roundStatus.innerHTML = 'ROUND ' + counterRound;
+  newRound();
+  allowClickEvent()
+}
  
 
