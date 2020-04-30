@@ -3,8 +3,9 @@ const greenBtnSound = new Audio("https://s3.amazonaws.com/freecodecamp/simonSoun
 const yellowBtnSound = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3");
 const redBtnSound = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3");
 const blueBtnSound = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3");
-const wrongSound = new Audio("https://res.cloudinary.com/thisiswhale/video/upload/v1518937949/142608__autistic-lucario__error_vcwlt0.wav");
-const winSound = new Audio("https://res.cloudinary.com/thisiswhale/video/upload/v1518166335/Regular_Show__OOOOOOOOOOOOOOOOOOOOHHHHHHHHH_qlwzvh.mp3");
+const winSound = new Audio("assets/sounds/win.mp3");
+const wrongSound = new Audio("assets/sounds/wrong.mp3");
+
 
 const volBtn = $("#volume-btn");
 const btn = $(".btn");
@@ -68,6 +69,7 @@ function startGame() {
   }, animationDuration);
 
 
+
 //--Strict mode
   function strictMode() {
     if (strict) {
@@ -93,7 +95,7 @@ function getPanel() {
     lightUp(color);
     checkPattern(color);
 }
-//--
+//--Allow and Block Click
 function allowClickEvent() {
     for (let i = 0; i < panels.length; i++) {
     panels[i].addEventListener('click', getPanel);
@@ -105,20 +107,13 @@ function blockClickEvent() {
     panels[i].removeEventListener('click', getPanel);
   }
 };
-
+//--New Round 
 function newRound() {
-  const randomNum = Math.floor(Math.random() * 3);
-  simonMemory.push(gameboard[randomNum]);
-  animate(simonMemory)
-}
+    const randomNum = Math.floor(Math.random() * 3);
+    simonMemory.push(gameboard[randomNum]);
+    animate(simonMemory);
+};
 
-setDifficulty(levels.round1)
-  simonMemory;
-  counterRound;
-  thisSequence;
-  roundStatus.innerHTML = 'ROUND ' + counterRound;
-  newRound();
-  allowClickEvent()
-}
+
  
 
