@@ -41,7 +41,15 @@ for (let i = 0; i < btn.length; i++) {
     //--console.log("mouseout");
   });
 }
-   
+
+function setDifficulty(setLevel) {
+    for (let i = 0; i < panels.length; i++) {
+    panels[i].style.webkitAnimationDuration = setLevel.animateSpeed;
+    panels[i].style.animationDuration = setLevel.animateSpeed;
+    }
+    roundSpeedDuration = setLevel.roundSpeed;
+    playbackSpeed = setLevel.soundSpeed;
+};
 
 //--Volume ON/OFF
 $(volBtn).click(function() {
@@ -60,7 +68,8 @@ $(volBtn).click(function() {
     }
 });
 
- 
+
+
 //--Start game 
 function startGame() {
     $(".start-btn").addClass('animated', 'heartBeat');
@@ -68,7 +77,14 @@ function startGame() {
     $(".start-btn").removeClass('animated', 'heartBeat');
   }, animationDuration);
 
-
+    setDifficulty(levels.round1)
+    simonMemory;
+    counterRound;
+    thisSequence;
+    roundStatus.innerHTML = 'ROUND ' + counterRound;
+    newRound();
+    allowClickEvent()
+};
 
 //--Strict mode
   function strictMode() {
@@ -91,9 +107,9 @@ function startGame() {
 //--Colour panels green, yellow, blue, green by id
 function getPanel() {
     const color = this.getAttribute('id');
-    playSound(color);
+    /*playSound(color);
     lightUp(color);
-    checkPattern(color);
+    checkPattern(color);*/
 }
 //--Allow and Block Click
 function allowClickEvent() {
@@ -107,12 +123,62 @@ function blockClickEvent() {
     panels[i].removeEventListener('click', getPanel);
   }
 };
+
 //--New Round 
 function newRound() {
     const randomNum = Math.floor(Math.random() * 3);
     simonMemory.push(gameboard[randomNum]);
     animate(simonMemory);
 };
+
+//--Animate array sequence
+function animate(sequence) { 
+    sendStatus('SIMON SAYS...');
+    var i = 0;
+    var interval = setInterval(function() {
+    lightUp(sequence[i]);
+    playSound(sequence[i]);
+    i++;
+    if (i >= sequence.length) {
+      clearInterval(interval);
+      setTimeout(sendStatus.bind(null, 'YOUR TURN!'), 1000)
+    }
+  }, roundSpeedDuration);
+
+}
+//--Status Bar Switch Statement
+function sendStatus(vol) {
+    statusBox.innerHTML = vol
+    switch (vol) {
+    case 'SIMON SAYS...':
+      $(".status-bar").addClass('animated', 'zoomIn');
+      window.setTimeout(function() {
+        $(".status-bar").removeClass('animated', 'zoomIn');
+      }, 1000);
+      break;
+    case 'YOUR TURN!':
+      $(".status-bar").addClass('animated', 'flash');
+      window.setTimeout(function() {
+        $(".status-bar").removeClass('animated', 'flash');
+         }, 1000);
+      break;
+    case 'YOU WIN!':
+      playSound('winSound');
+      $(".status-bar").addClass('animated', 'zoomInRight');
+      window.setTimeout(function() {
+        $(".status-bar").removeClass('animated', 'zoomInRight');
+        }, 1000);
+      break;
+  }
+};
+
+/*lightUp Panel
+playSound
+checkPattern*/
+
+
+
+
 
 
  
