@@ -54,6 +54,9 @@ function setDifficulty(setLevel) {
 $(volBtn).click(function() {
     if (sound) {
         sound = false;
+        Array.prototype.slice.call(document.querySelectorAll('audio')).forEach(function(audio) {
+        audio.muted = true;
+        });
         $(this).toggleClass("fa-volume-mute");
         $(this).toggleClass("fa-volume-up");
         //--console.log("sound", sound);
@@ -61,6 +64,9 @@ $(volBtn).click(function() {
     }
     else {
         sound = true;
+        Array.prototype.slice.call(document.querySelectorAll('audio')).forEach(function(audio) {
+        audio.muted = false;
+        });
         $(this).toggleClass("fa-volume-mute");
         $(this).toggleClass("fa-volume-up");
         //--console.log("sound", sound);
@@ -192,7 +198,7 @@ function playSound(word) {
   }
   audio.play();
 };
-//--When Error Sound
+//--When Error
 function playWrongSound() { 
     const audio = wrongSound;
     audio.currentTime = 0;
