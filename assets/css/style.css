@@ -4,7 +4,7 @@ body {
   margin: 0;
   overflow: hidden;
   font-family: "Alfa Slab One", "sans-serif";
-  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/concrete_wall.png");
+  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/tweed.png");
   color: #fff;
   text-shadow: black 1px 0 10px; 
   height: auto;
@@ -12,7 +12,8 @@ body {
 
   @media (min-width: 320px) {
     body {
-      font-size: 15px; }
+      font-size: 15px;
+         }
        }
 
   @media (min-width: 369px) {
