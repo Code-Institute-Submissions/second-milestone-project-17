@@ -9,25 +9,24 @@ const wrongSound = new Audio("assets/sounds/wrong.mp3");
 
 const volBtn = $("#volume-btn");
 const btn = $(".btn");
-const strictBtn = $(".strict-btn");
-const startBtn = $(".start-btn");
-const statusBox = $(".status-bar");
-const panels = $(".panel");
+const strictBtn = document.querySelector('.strict-btn');
+const startBtn = document.querySelector('.start-btn');
+const statusBox = document.querySelector('.status-bar');
+const panels = document.getElementsByClassName('panel');
 const gameboard = ['green', 'yellow', 'blue', 'red'];
-const roundStatus = $(".round-status");
+const roundStatus = document.querySelector('.round-status');
 const totalRound = 20;
 const animationDuration = 500;
 
-let simonMemory = [];
-let counterRound = 1;
-let thisSequence = 0;
+let simonMemory, counterRound, thisSequence;
 let strict = false;
 let sound = true;
+
 const levels = {
-  round1: {roundSpeed: 950, soundSpeed: 0.75, animateSpeed: '0.75s'},
-  round5: {roundSpeed: 750, soundSpeed: 1.0, animateSpeed: '0.65s'},
-  round10: {roundSpeed: 550,soundSpeed: 1.25, animateSpeed: '0.55s'},
-  round15: {roundSpeed: 450,soundSpeed: 1.30, animateSpeed: '0.50s'},
+  round1: {roundSpeed: 1000, soundSpeed: 0.75, animateSpeed: '0.75s'},
+  round5: {roundSpeed: 800, soundSpeed: 1.0, animateSpeed: '0.65s'},
+  round10: {roundSpeed: 600,soundSpeed: 1.25, animateSpeed: '0.55s'},
+  round15: {roundSpeed: 500,soundSpeed: 1.30, animateSpeed: '0.50s'},
 };
 //--Mouseover and mouseout function on buttons which are pulsing
 for (let i = 0; i < btn.length; i++) {
@@ -78,9 +77,9 @@ function startGame() {
   }, animationDuration);
 
     setDifficulty(levels.round1)
-    simonMemory;
-    counterRound;
-    thisSequence;
+    simonMemory = [];
+    counterRound = 1;
+    thisSequence = 0;
     roundStatus.innerHTML = 'ROUND ' + counterRound;
     newRound();
     allowClickEvent()
@@ -108,8 +107,8 @@ function startGame() {
 function getPanel() {
     const color = this.getAttribute('id');
     lightUp(color);
-   /* playSound(color);
-    checkPattern(color);*/
+    playSound(color);
+    checkPattern(color);
 }
 //--Allow and Block Click
 function allowClickEvent() {
@@ -147,26 +146,26 @@ function animate(sequence) {
 
 }
 //--Status Bar Switch Statement
-function sendStatus(vol) {
-    statusBox.innerHTML = vol
-    switch (vol) {
+function sendStatus(str) {
+    statusBox.innerHTML = str
+    switch (str) {
     case 'SIMON SAYS...':
-      $(".status-bar").addClass('animated', 'zoomIn');
+      statusBox.classList.add('animated', 'zoomIn');
       window.setTimeout(function() {
-        $(".status-bar").removeClass('animated', 'zoomIn');
+        statusBox.classList.remove('animated', 'zoomIn');
       }, 1000);
       break;
     case 'YOUR TURN!':
-      $(".status-bar").addClass('animated', 'flash');
+      statusBox.classList.add('animated', 'flash');
       window.setTimeout(function() {
-        $(".status-bar").removeClass('animated', 'flash');
+        statusBox.classList.remove('animated', 'flash');
          }, 1000);
       break;
-    case 'YOU WIN!':
-      playSound('winSound');
-      $(".status-bar").addClass('animated', 'zoomInRight');
+    case 'YOU WON!':
+      playWinSound();
+      statusBox.classList.add('animated', 'zoomInRight');
       window.setTimeout(function() {
-        $(".status-bar").removeClass('animated', 'zoomInRight');
+        statusBox.classList.remove('animated', 'zoomInRight');
         }, 1000);
       break;
   }
@@ -184,12 +183,27 @@ function lightUp(panel) {
 };
 
 
-/*playSound
-checkPattern*/
-
-
-
-
+//-- Play Sound
+function playSound(word) { 
+    const audio = document.querySelector(`audio[data-key="${word}"]`);
+    audio.currentTime = 0;
+    if (gameboard.includes(word)) {
+    audio.playbackRate = playbackSpeed;
+  }
+  audio.play();
+};
+//--When Error Sound
+function playWrongSound() { 
+    const audio = wrongSound;
+    audio.currentTime = 0;
+    audio.play();
+};
+//--When Win Sound
+function playWinSound() {
+    const audio = winSound;
+    audio.currentTime = 0;
+    audio.play();
+};
 
 
  
