@@ -107,8 +107,8 @@ function startGame() {
 //--Colour panels green, yellow, blue, green by id
 function getPanel() {
     const color = this.getAttribute('id');
-    /*playSound(color);
     lightUp(color);
+   /* playSound(color);
     checkPattern(color);*/
 }
 //--Allow and Block Click
@@ -171,9 +171,20 @@ function sendStatus(vol) {
       break;
   }
 };
+//--Light Up 
+function lightUp(panel) { 
+  var thisPanel = document.getElementById(panel);
+  thisPanel.classList.add('lit');
+  thisPanel.classList.add('animated', 'jello');
+  window.setTimeout(function() {
+    thisPanel.classList.remove('lit');
+    thisPanel.classList.remove('animated', 'jello');
+  }, animationDuration);
 
-/*lightUp Panel
-playSound
+};
+
+
+/*playSound
 checkPattern*/
 
 
