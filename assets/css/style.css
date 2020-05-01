@@ -119,13 +119,21 @@ i {
   }
 
 .strict-btn {
-  cursor: pointer;
-  color: #fff; 
+    cursor: pointer;
+    color: #fff; 
   }
+
+.start-btn:hover,
+.strict-btn:hover{
+    color: #F26B38;
+}
 
 .strict-btn.on {
   color: yellow;
    }
+
+ .round-status.wrong {
+  color: red; }  
 
 /* Gameboard */
 
