@@ -34,6 +34,7 @@ body {
  /* Header */
 
 .nav-wrapper .btn {
+  color:#F26B38;
   margin-top: 5px;
   margin-left: 0;
   margin-right: 0;
@@ -47,7 +48,7 @@ body {
 .nav-wrapper .btn:hover,
 .nav-wrapper .btn:focus {
   text-decoration: none;
-  color: #F26B38;
+  color: #fff;
   background: none;
   border: none;
   box-shadow: none; 
