@@ -127,10 +127,14 @@ i {
 
 .start-btn:hover,
 .strict-btn:hover{
-    color: #F26B38;
+    color: #fff;
 }
 
 .strict-btn.on {
+  color: yellow;
+   }
+
+.start-btn.on {
   color: yellow;
    }
 
@@ -287,5 +291,6 @@ i {
     .footer-text a:hover,
     .footer-text a:focus {
     text-decoration: none; 
-    color: #F26B38;
+    color: #db4031;
+   };
   }

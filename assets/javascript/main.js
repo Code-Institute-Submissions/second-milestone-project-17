@@ -83,9 +83,11 @@ $(volBtn).click(function() {
 
 //--Start game 
 function startGame() {
-    startBtn.classList.add('animated', 'heartBeat');
+    startBtn.classList.add('animated', 'rubberBand');
+    startBtn.classList.add('on');
     window.setTimeout(function() {
-    startBtn.classList.remove('animated', 'heartBeat');
+    startBtn.classList.remove('animated', 'rubberBandt');
+    startBtn.classList.remove('on');
   }, animationDuration);
     console.log("Game started")
 
@@ -106,14 +108,14 @@ function startGame() {
      strictBtn.classList.remove('on');
      window.setTimeout(function() {
      strictBtn.classList.remove('animated', 'rubberBand');
-    }, 1000);
+    }, 980);
     console.log("Strict", strict)
   } else {
     strict = true;
     strictBtn.classList.add('on', 'animated', 'rubberBand');
     window.setTimeout(function() {
     strictBtn.classList.remove('animated', 'rubberBand');
-    }, 1000);
+    }, 980);
     console.log("Strict", strict)
   }
 };
@@ -167,14 +169,14 @@ function sendStatus(str) {
         statusBox.classList.add('animated', 'zoomIn');
         window.setTimeout(function() {
         statusBox.classList.remove('animated', 'zoomIn');
-        }, 1000);
+        }, 980);
         break;
 
     case 'YOUR TURN!':
         statusBox.classList.add('animated', 'flash');
         window.setTimeout(function() {
         statusBox.classList.remove('animated', 'flash');
-         }, 1000);
+         }, 980);
       break;
 
     case 'YOU WON!':
@@ -182,7 +184,7 @@ function sendStatus(str) {
         statusBox.classList.add('animated', 'zoomInRight');
         window.setTimeout(function() {
         statusBox.classList.remove('animated', 'zoomInRight');
-        }, 1000);
+        }, 980);
       break;
   }
 };
@@ -233,6 +235,26 @@ function checkRound(thisRound) {
     }
         roundStatus.innerHTML = 'ROUND ' + counterRound;
 };
+//--Animate Round
+function animateRound(correct) {
+        if (correct) { 
+        roundStatus.classList.add('correct', 'animated', 'wobble');
+        window.setTimeout(function() {
+        roundStatus.classList.remove('correct', 'animated', 'wobble');
+    },  animationDuration);
+    }   else if (!correct) { 
+        playWrongSound();
+        roundStatus.classList.add('wrong', 'animated', 'shake');
+        window.setTimeout(function() {
+        roundStatus.classList.remove('wrong', 'animated', 'shake');
+    },  animationDuration);  
+    }   blockClickEvent();
+};     
+    
+
+
+
+
 
 
 
