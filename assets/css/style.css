@@ -211,17 +211,17 @@ i {
     border-color: #db4031;
    }
 
-.panel#blue {
+.panel#green {
     padding: 5px;  
     bottom: 0;
     right: 0;
-    border-color: #3c7de6; 
+    border-color: #2daf4f;
   }
 
-.panel#green {
+.panel#blue {
     top: 0;
     left: 0;
-    border-color: #2daf4f;
+    border-color: #3c7de6;
 }
 
 .panel#green:active, .panel.lit#green {
