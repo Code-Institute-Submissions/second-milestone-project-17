@@ -7,8 +7,8 @@ const winSound = new Audio("assets/sounds/win.mp3");
 const wrongSound = new Audio("assets/sounds/wrong.mp3");
 
 
-const volBtn = $("#volume-btn");
-const btn = $(".btn");
+const volBtn = $('#volume-btn');
+const btn = $('.btn');
 const strictBtn = document.querySelector('.strict-btn');
 const startBtn = document.querySelector('.start-btn');
 const statusBox = document.querySelector('.status-bar');
@@ -23,10 +23,10 @@ let strict = false;
 let sound = true;
 
 const levels = {
-  round1: {roundSpeed: 1000, soundSpeed: 0.75, animateSpeed: '0.75s'},
-  round5: {roundSpeed: 800, soundSpeed: 1.0, animateSpeed: '0.65s'},
-  round10: {roundSpeed: 600,soundSpeed: 1.25, animateSpeed: '0.55s'},
-  round15: {roundSpeed: 500,soundSpeed: 1.30, animateSpeed: '0.50s'},
+  round1: {roundSpeed: 980, soundSpeed: 0.75, animateSpeed: '0.75s'},
+  round5: {roundSpeed: 780, soundSpeed: 1.0, animateSpeed: '0.65s'},
+  round10: {roundSpeed: 580,soundSpeed: 1.25, animateSpeed: '0.55s'},
+  round15: {roundSpeed: 480,soundSpeed: 1.30, animateSpeed: '0.50s'},
 };
 //--Mouseover and mouseout function on buttons which are pulsing
 for (let i = 0; i < btn.length; i++) {
@@ -57,9 +57,11 @@ $(volBtn).click(function() {
         Array.prototype.slice.call(document.querySelectorAll('audio')).forEach(function(audio) {
         audio.muted = true;
         });
+        wrongSound.muted = true;
+        winSound.muted = true;
         $(this).toggleClass("fa-volume-mute");
         $(this).toggleClass("fa-volume-up");
-        //--console.log("sound", sound);
+        console.log("sound", sound);
         
     }
     else {
@@ -67,9 +69,11 @@ $(volBtn).click(function() {
         Array.prototype.slice.call(document.querySelectorAll('audio')).forEach(function(audio) {
         audio.muted = false;
         });
+        wrongSound.muted = false;
+        winSound.muted = false;
         $(this).toggleClass("fa-volume-mute");
         $(this).toggleClass("fa-volume-up");
-        //--console.log("sound", sound);
+        console.log("sound", sound);
     }
 });
 
@@ -77,10 +81,11 @@ $(volBtn).click(function() {
 
 //--Start game 
 function startGame() {
-    $(".start-btn").addClass('animated', 'heartBeat');
+    startBtn.classList.add('animated', 'heartBeat');
     window.setTimeout(function() {
-    $(".start-btn").removeClass('animated', 'heartBeat');
+    startBtn.classList.remove('animated', 'heartBeat');
   }, animationDuration);
+    console.log("Game started")
 
     setDifficulty(levels.round1)
     simonMemory = [];
@@ -95,18 +100,19 @@ function startGame() {
   function strictMode() {
     if (strict) {
     strict = false;
-     $(".strict-btn").addClass('animated', 'rubberBand'); 
-     $(".strict-btn").removeClass('on');
-    window.setTimeout(function() {
-     $(".strict-btn").removeClass('animated', 'rubberBand');
+     strictBtn.classList.add('animated', 'rubberBand'); 
+     strictBtn.classList.remove('on');
+     window.setTimeout(function() {
+     strictBtn.classList.remove('animated', 'rubberBand');
     }, 1000);
-
+    console.log("Strict", strict)
   } else {
     strict = true;
-    $(".strict-btn").addClass('on', 'animated', 'rubberBand');
+    strictBtn.classList.add('on', 'animated', 'rubberBand');
     window.setTimeout(function() {
-      $(".strict-btn").removeClass('animated', 'rubberBand');
+    strictBtn.classList.remove('animated', 'rubberBand');
     }, 1000);
+    console.log("Strict", strict)
   }
 };
 //--Colour panels green, yellow, blue, green by id
@@ -156,21 +162,23 @@ function sendStatus(str) {
     statusBox.innerHTML = str
     switch (str) {
     case 'SIMON SAYS...':
-      statusBox.classList.add('animated', 'zoomIn');
-      window.setTimeout(function() {
+        statusBox.classList.add('animated', 'zoomIn');
+        window.setTimeout(function() {
         statusBox.classList.remove('animated', 'zoomIn');
-      }, 1000);
-      break;
+        }, 1000);
+        break;
+
     case 'YOUR TURN!':
-      statusBox.classList.add('animated', 'flash');
-      window.setTimeout(function() {
+        statusBox.classList.add('animated', 'flash');
+        window.setTimeout(function() {
         statusBox.classList.remove('animated', 'flash');
          }, 1000);
       break;
+
     case 'YOU WON!':
-      playWinSound();
-      statusBox.classList.add('animated', 'zoomInRight');
-      window.setTimeout(function() {
+        playWinSound();
+        statusBox.classList.add('animated', 'zoomInRight');
+        window.setTimeout(function() {
         statusBox.classList.remove('animated', 'zoomInRight');
         }, 1000);
       break;
@@ -178,12 +186,12 @@ function sendStatus(str) {
 };
 //--Light Up 
 function lightUp(panel) { 
-  var thisPanel = document.getElementById(panel);
-  thisPanel.classList.add('lit');
-  thisPanel.classList.add('animated', 'jello');
-  window.setTimeout(function() {
-    thisPanel.classList.remove('lit');
-    thisPanel.classList.remove('animated', 'jello');
+        var thisPanel = document.getElementById(panel);
+        thisPanel.classList.add('lit');
+        thisPanel.classList.add('animated', 'jello');
+        window.setTimeout(function() {
+        thisPanel.classList.remove('lit');
+        thisPanel.classList.remove('animated', 'jello');
   }, animationDuration);
 
 };
@@ -191,26 +199,37 @@ function lightUp(panel) {
 
 //-- Play Sound
 function playSound(word) { 
-    const audio = document.querySelector(`audio[data-key="${word}"]`);
-    audio.currentTime = 0;
-    if (gameboard.includes(word)) {
-    audio.playbackRate = playbackSpeed;
+        const audio = document.querySelector(`audio[data-key="${word}"]`);
+        audio.currentTime = 0;
+        if (gameboard.includes(word)) {
+        audio.playbackRate = playbackSpeed;
   }
-  audio.play();
+    audio.play();
 };
 //--When Error
 function playWrongSound() { 
-    const audio = wrongSound;
-    audio.currentTime = 0;
-    audio.play();
+        const audio = wrongSound;
+        audio.currentTime = 0;
+        audio.play();
 };
 //--When Win Sound
 function playWinSound() {
-    const audio = winSound;
-    audio.currentTime = 0;
-    audio.play();
+        const audio = winSound;
+        audio.currentTime = 0;
+        audio.play();
+};
+//--Levels breakpoints 5/10/15
+function checkRound(thisRound) {
+        if (thisRound == 5) {
+        setDifficulty(levels.round5)
+
+    }   else if (thisRound == 10) {
+    setDifficulty(levels.round10)
+
+    }   else if (thisRound == 15) {
+        setDifficulty(levels.round15)
+    }
+        roundStatus.innerHTML = 'ROUND ' + counterRound;
 };
 
-
- 
 
