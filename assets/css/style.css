@@ -12,13 +12,13 @@ body {
 
   @media (min-width: 320px) {
     body {
-      font-size: 15px;
+      font-size: 14px;
          }
        }
 
   @media (min-width: 369px) {
     body {
-      font-size: 20px; }
+      font-size: 16px; }
        }
 
   @media (min-width: 768px) {
@@ -107,12 +107,12 @@ i {
 
   @media (min-width: 768px) {
     .nav {
-      margin: 0 42px; }
+      margin: 15px 45px; }
        }
 
   @media (min-width: 1024px) {
     .nav {
-      margin: 0 92px; }
+      margin: 15px 85px; }
        }
 
 .start-btn {
@@ -156,11 +156,17 @@ i {
       height: 295px; }
        }
 
-  @media (min-width: 369px) {
+ @media (min-width: 369px) {
     .gameboard {
       width: 340px;
       height: 340px; }
        }
+
+ @media (min-width: 768px) {
+    .gameboard {
+      width: 360px;
+      height: 360px; }
+       }      
 
   @media (min-width: 1024px) {
     .gameboard {
