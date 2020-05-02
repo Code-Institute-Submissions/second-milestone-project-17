@@ -61,6 +61,7 @@ $(volBtn).click(function() {
         winSound.muted = true;
         $(this).toggleClass("fa-volume-mute");
         $(this).toggleClass("fa-volume-up");
+        $(this).css("color", "red")
         console.log("sound", sound);
         
     }
@@ -73,6 +74,7 @@ $(volBtn).click(function() {
         winSound.muted = false;
         $(this).toggleClass("fa-volume-mute");
         $(this).toggleClass("fa-volume-up");
+        $(this).css("color", "#63e38a")
         console.log("sound", sound);
     }
 });
@@ -231,5 +233,6 @@ function checkRound(thisRound) {
     }
         roundStatus.innerHTML = 'ROUND ' + counterRound;
 };
+
 
 
