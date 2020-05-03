@@ -27,7 +27,7 @@
             </div>
             <!--Info button for instructions-->
             <div class="col-2 offset-4 col-md-1 offset-md-5">
-                <button id="instructions-btn" type="button" class="btn btn-primary" data-toggle="" data-target="">
+                <button id="instructions-btn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#intructionsModal">
                     <i class="fas fa-info-circle"></i>
                 </button>
             </div>
@@ -64,7 +64,44 @@
         </h6>
 </footer>
 <!--Instructions modal-->
+<div class="modal fade" id="intructionsModal" tabindex="-1" role="dialog" aria-labelledby="intructionsModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+            <h2 class="modal-header-title" id="modalTitle">Instructions</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
 
+            <div class="modal-body">
+            <h4 class="modal-body-title">Aim of the game</h4>
+                <p class="modal-body-text">
+                     Replicate the displayed pattern. A new step is added each round which makes the game 
+                     progressively difficult. Difficulty increases at every 5 rounds.
+                 </p>
+            <h4 class="modal-body-title">How to play</h4>
+                <p class="modal-body-text">
+                    Press <em class="text-uppercase"><q>Start</q></em> to start the game.<br/>
+                </p>
+                <p class="modal-body-text">
+                    Has four colored buttons, each producing a particular tone when it is pressed. Clicked the wrong button and Simon will repeat the round.<br/>
+                </p>
+                <p class="modal-body-text">
+                    Successfully complete 20 rounds to win the game.
+                </p>
+                <h4 class="modal-body-title">Strict mode</h4>
+                    <p class="modal-body-text">
+                    <em class="text-uppercase"><q>Strict</q></em> enabled will start the game over to Round 1 when player pressed the incorrect sequence. No second chances. 
+                        Enable Strict Mode at anytime of any round.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button id="modal-btn" type="button" class="btn btn-secondary modal-btn" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
 
 
 
