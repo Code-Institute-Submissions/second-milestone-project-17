@@ -23,10 +23,10 @@ let strict = false;
 let sound = true;
 
 const levels = {
-  round1: {roundSpeed: 980, soundSpeed: 0.75, animateSpeed: '0.75s'},
-  round5: {roundSpeed: 780, soundSpeed: 1.0, animateSpeed: '0.65s'},
-  round10: {roundSpeed: 580,soundSpeed: 1.25, animateSpeed: '0.55s'},
-  round15: {roundSpeed: 480,soundSpeed: 1.30, animateSpeed: '0.50s'},
+  round1: {roundSpeed: 1000, soundSpeed: 0.75, animateSpeed: '0.75s'},
+  round5: {roundSpeed: 800, soundSpeed: 1.0, animateSpeed: '0.65s'},
+  round10: {roundSpeed: 600, soundSpeed: 1.25, animateSpeed: '0.55s'},
+  round15: {roundSpeed: 500, soundSpeed: 1.30, animateSpeed: '0.50s'},
 };
 //--Mouseover and mouseout function on buttons which are pulsing
 for (let i = 0; i < btn.length; i++) {
@@ -108,14 +108,14 @@ function startGame() {
      strictBtn.classList.remove('on');
      window.setTimeout(function() {
      strictBtn.classList.remove('animated', 'rubberBand');
-    }, 980);
+    }, 1000);
     console.log("Strict", strict)
   } else {
     strict = true;
     strictBtn.classList.add('on', 'animated', 'rubberBand');
     window.setTimeout(function() {
     strictBtn.classList.remove('animated', 'rubberBand');
-    }, 980);
+    }, 1000);
     console.log("Strict", strict)
   }
 };
@@ -141,7 +141,7 @@ function blockClickEvent() {
 
 //--New Round 
 function newRound() {
-    const randomNum = Math.floor(Math.random() * 3);
+    const randomNum = Math.floor(Math.random() * 4);
     simonMemory.push(gameboard[randomNum]);
     animate(simonMemory);
 };
@@ -169,14 +169,14 @@ function sendStatus(str) {
         statusBox.classList.add('animated', 'zoomIn');
         window.setTimeout(function() {
         statusBox.classList.remove('animated', 'zoomIn');
-        }, 980);
+        }, 1000);
         break;
 
     case 'YOUR TURN!':
         statusBox.classList.add('animated', 'flash');
         window.setTimeout(function() {
         statusBox.classList.remove('animated', 'flash');
-         }, 980);
+         }, 1000);
       break;
 
     case 'YOU WON!':
@@ -184,7 +184,7 @@ function sendStatus(str) {
         statusBox.classList.add('animated', 'zoomInRight');
         window.setTimeout(function() {
         statusBox.classList.remove('animated', 'zoomInRight');
-        }, 980);
+        }, 1000);
       break;
   }
 };
@@ -249,7 +249,39 @@ function animateRound(correct) {
         roundStatus.classList.remove('wrong', 'animated', 'shake');
     },  animationDuration);  
     }   blockClickEvent();
-};     
+}; 
+//-- Check Pattern
+function checkPattern(thisPanel) {
+        let correct = true;
+        if (simonMemory[thisSequence] == thisPanel) {
+        if ((thisSequence + 1) == simonMemory.length) {
+        if (counterRound == 20) {
+        setTimeout(sendStatus.bind(null, 'YOU WON!'), 1000);
+    }   else {
+        thisSequence = 0;
+        counterRound++;
+        checkRound(counterRound);
+        animateRound(correct);
+        setTimeout(newRound, 1000);
+    }
+    }   else {
+        thisSequence++;
+    }
+    }   else if (strict == true) { 
+        correct = false;
+        animateRound(correct);
+        setTimeout(startGame, 1000);
+    }   else {
+        correct = false;
+        animateRound(correct);
+        thisSequence = 0;
+        setTimeout(animate.bind(null, simonMemory), 1000);
+  }
+    allowClickEvent();
+};
+
+
+
     
 
 
