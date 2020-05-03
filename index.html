@@ -4,27 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Favicon from https://favicon.io/favicon-generator/-->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
     <title>SIMON GAME</title>
+    <!--Link to Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <!--Link to Font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <!--Link to Animate.css https://daneden.github.io/animate.css/-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+    <!--My custom stylesheet-->
     <link rel="stylesheet" href="assets/css/style.css">   
 </head>
 
 <body> 
-
+<!--Header -game name link to home page- -->
 <header class="nav-container container-fluid text-center">
         <div class="nav-wrapper row">
             <div class="col-12">
                 <h1 class="nav-heading text-uppercase"><a href="index.html">Simon</a></h1>
             </div>
+            <!--Info button for instructions-->
             <div class="col-2 offset-4 col-md-1 offset-md-5">
                 <button id="instructions-btn" type="button" class="btn btn-primary" data-toggle="" data-target="">
                     <i class="fas fa-info-circle"></i>
                 </button>
             </div>
+            <!--Volume ON/OFF button-->
             <div class="col-2 col-md-1">
                 <button type="button" class="btn btn-primary">
                     <i id="volume-btn" class="fas fa-volume-up"></i>
@@ -32,30 +39,31 @@
             </div>
         </div>
 </header>
-
+<!--Section with conatainer Start / Rounds status / Strict mode-->
 <section class="container">
         <div class="top-panel">
             <div class="nav btn start-btn text-uppercase" onclick="startGame()">Start</div>
             <div class="nav round-status text-uppercase">Round 1</div>
             <div class="nav btn strict-btn text-uppercase" onclick="strictMode()">Strict</div>
         </div>  
-
+        <!--Gameboard panel (blue/yellow/green/red colors-->
         <div class="gameboard">
             <div class="panel" id ="blue"></div>
             <div class="panel" id ="yellow"></div>
             <div class="panel" id ="green"></div>
             <div class="panel" id ="red"></div>
         </div>
-
+        <!--Status bar / Simon says, Your turn!-->
         <div class="status-bar"></div>
 
 </section>
-
+<!--Footer my name link to my github page-->
 <footer class="footer-container container-fluid">
         <h6 class="footer-text"> 2020 |
             <a href="https://github.com/kompeet" target="_blank">Peter Komaromi</a>
         </h6>
 </footer>
+<!--Instructions modal-->
 
 
 
@@ -65,11 +73,12 @@
 
 
 
-
+    <!--Audio of colours-->
     <audio data-key="green" src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></audio>
     <audio data-key="yellow" src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></audio>
     <audio data-key="red" src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></audio>
     <audio data-key="blue" src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></audio>
+    <!--jQuery, bootstrap.js CDNs and script link to my js files-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.slim.min.js" integrity="sha256-MlusDLJIP1GRgLrOflUQtshyP0TwT/RHXsI1wWGnQhs=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
