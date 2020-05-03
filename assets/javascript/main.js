@@ -1,11 +1,6 @@
 //---------------------------Sound Variables / Button Variables / Variables
-const greenBtnSound = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
-const yellowBtnSound = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3");
-const redBtnSound = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3");
-const blueBtnSound = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3");
 const winSound = new Audio("assets/sounds/win.mp3");
 const wrongSound = new Audio("assets/sounds/wrong.mp3");
-
 
 const volBtn = $('#volume-btn');
 const btn = $('.btn');
@@ -17,18 +12,18 @@ const gameboard = ['green', 'yellow', 'blue', 'red'];
 const roundStatus = document.querySelector('.round-status');
 const totalRound = 20;
 const animationDuration = 500;
-//----------------simonMemory is [], counterRound is 1, thisSequence is 0/ Strict is false on default / Sound is on
+//----------------------------simonMemory is [], counterRound is 1, thisSequence is 0/ Strict is false on default / Sound is on
 let simonMemory, counterRound, thisSequence;
 let strict = false;
 let sound = true;
-//-----------------------------------------level difficulty round, sound and animation speed
+//----------------------------level difficulty round, sound and animation speed
 const levels = {
-  round1: {roundSpeed: 1000, soundSpeed: 0.75, animateSpeed: '0.75s'},
-  round5: {roundSpeed: 800, soundSpeed: 1.0, animateSpeed: '0.65s'},
-  round10: {roundSpeed: 600, soundSpeed: 1.25, animateSpeed: '0.55s'},
-  round15: {roundSpeed: 575, soundSpeed: 1.30, animateSpeed: '0.525s'},
+  round1: {roundSpeed: 1000, soundSpeed: 0.75},
+  round5: {roundSpeed: 800, soundSpeed: 1.0},
+  round10: {roundSpeed: 600, soundSpeed: 1.25},
+  round15: {roundSpeed: 575, soundSpeed: 1.30},
 };
-//------------------------Mouseover and mouseout function on buttons which are pulsing
+//----------------------------Mouseover and mouseout function on buttons which are pulsing
 for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener('mouseover', function() {
     btn[i].classList.add('animated', 'infinite', 'pulse')
@@ -40,7 +35,7 @@ for (let i = 0; i < btn.length; i++) {
     //--console.log("mouseout");
   });
 }
-//--------------------------------------------levels adjusted 
+//-----------------------------levels adjusted 
 function setDifficulty(setLevel) {
     for (let i = 0; i < panels.length; i++) {
     panels[i].style.webkitAnimationDuration = setLevel.animateSpeed;
@@ -50,7 +45,7 @@ function setDifficulty(setLevel) {
     playbackSpeed = setLevel.soundSpeed;
 };
 
-//---------------------------------------------Volume ON/OFF
+//------------------------------Volume ON/OFF button icon and colour changes
 $(volBtn).click(function() {
     if (sound) {
         sound = false;
@@ -81,91 +76,91 @@ $(volBtn).click(function() {
 
 
 
-//---------------------------------------------------Start game / button animated
+//------------------------------Start game / button animated
 function startGame() {
-    startBtn.classList.add('animated', 'rubberBand');
-    startBtn.classList.add('on');
-    window.setTimeout(function() {
-    startBtn.classList.remove('animated', 'rubberBandt');
-    startBtn.classList.remove('on');
-  }, animationDuration);
-    console.log("Game started")
+        startBtn.classList.add('animated', 'rubberBand');
+        startBtn.classList.add('on');
+        window.setTimeout(function() {
+        startBtn.classList.remove('animated', 'rubberBandt');
+        startBtn.classList.remove('on');
+  },    animationDuration);
+        console.log("Game started")
 
-    setDifficulty(levels.round1)
-    simonMemory = [];
-    counterRound = 1;
-    thisSequence = 0;
-    roundStatus.innerHTML = 'ROUND ' + counterRound;
-    newRound();
-    allowClickEvent()
+        setDifficulty(levels.round1)
+        simonMemory = [];
+        counterRound = 1;
+        thisSequence = 0;
+        roundStatus.innerHTML = 'ROUND ' + counterRound;
+        newRound();
+        allowClickEvent()
 };
 
-//---------------------------------------------------Strict mode / button animated
+//-------------------------------Strict mode / button animated
   function strictMode() {
     if (strict) {
-    strict = false;
-     strictBtn.classList.add('animated', 'rubberBand'); 
-     strictBtn.classList.remove('on');
-     window.setTimeout(function() {
-     strictBtn.classList.remove('animated', 'rubberBand');
-    }, 1000);
-    console.log("Strict", strict)
-  } else {
-    strict = true;
-    strictBtn.classList.add('on', 'animated', 'rubberBand');
-    window.setTimeout(function() {
-    strictBtn.classList.remove('animated', 'rubberBand');
-    }, 1000);
-    console.log("Strict", strict)
+        strict = false;
+        strictBtn.classList.add('animated', 'rubberBand'); 
+        strictBtn.classList.remove('on');
+        window.setTimeout(function() {
+        strictBtn.classList.remove('animated', 'rubberBand');
+    },  1000);
+        console.log("Strict", strict)
+  }     else {
+        strict = true;
+        strictBtn.classList.add('on', 'animated', 'rubberBand');
+        window.setTimeout(function() {
+        strictBtn.classList.remove('animated', 'rubberBand');
+        }, 1000);
+        console.log("Strict", strict)
   }
 };
-//-----------------------------------Colour panels green, yellow, blue, green by id
+//--------------------------------Colour panels green, yellow, blue, green by id
 function getPanel() {
-    const color = this.getAttribute('id');
-    lightUp(color);
-    playSound(color);
-    checkPattern(color);
+        const color = this.getAttribute('id');
+        lightUp(color);
+        playSound(color);
+        checkPattern(color);
 }
-//--------------------------------------Allow and Block Click
+//---------------------------------Allow and Block Click
 function allowClickEvent() {
-    for (let i = 0; i < panels.length; i++) {
-    panels[i].addEventListener('click', getPanel);
+        for (let i = 0; i < panels.length; i++) {
+        panels[i].addEventListener('click', getPanel);
   }
 };
 
 function blockClickEvent() {
-    for (let i = 0; i < panels.length; i++) {
-    panels[i].removeEventListener('click', getPanel);
+        for (let i = 0; i < panels.length; i++) {
+        panels[i].removeEventListener('click', getPanel);
   }
 };
 
-//-----------------------------New Round / picks a colour from 4
+//---------------------------------New Round / picks a colour from 4
 function newRound() {
-    const randomNum = Math.floor(Math.random() * 4);
-    simonMemory.push(gameboard[randomNum]);
-    animate(simonMemory);
+        const randomNum = Math.floor(Math.random() * 4);
+        simonMemory.push(gameboard[randomNum]);
+        animate(simonMemory);
 };
 
-//-------------------------Animate array sequence
+//-------------------------------Animate array sequence
 function animate(sequence) { 
-    sendStatus('SIMON SAYS...');
-    var i = 0;
-    var interval = setInterval(function() {
-    lightUp(sequence[i]);
-    playSound(sequence[i]);
-    i++;
-    if (i >= sequence.length) {
-      clearInterval(interval);
-      setTimeout(sendStatus.bind(null, 'YOUR TURN!'), 1000)
+        sendStatus('SIMON SAYS...');
+        var i = 0;
+        var interval = setInterval(function() {
+        lightUp(sequence[i]);
+        playSound(sequence[i]);
+        i++;
+        if (i >= sequence.length) {
+        clearInterval(interval);
+        setTimeout(sendStatus.bind(null, 'YOUR TURN!'), 1000)
     }
   }, roundSpeedDuration);
 
 }
-//----------------------------------Status Bar Switch Statement
+//-------------------------------Status Bar Switch Statement
 function sendStatus(str) {
-    statusBox.innerHTML = str
-    switch (str) {
-    case 'SIMON SAYS...':
+        statusBox.innerHTML = str
+        switch (str) {
+        case 'SIMON SAYS...':
         statusBox.classList.add('animated', 'zoomIn');
         window.setTimeout(function() {
         statusBox.classList.remove('animated', 'zoomIn');
