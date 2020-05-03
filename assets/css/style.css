@@ -48,7 +48,6 @@ body {
 .nav-wrapper .btn:hover,
 .nav-wrapper .btn:focus {
   text-decoration: none;
-  color: #fff;
   background: none;
   border: none;
   box-shadow: none; 
