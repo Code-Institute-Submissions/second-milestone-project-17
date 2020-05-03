@@ -304,3 +304,11 @@ i {
     color: #fff;
    }
   }
+
+/* Instuctions modal styling*/
+
+body .modal-backdrop.fade.in {  /*Was not able to style the modal. Needed to debug*/
+    z-index: 0 !important;
+}
+
+
