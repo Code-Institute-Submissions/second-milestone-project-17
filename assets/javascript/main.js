@@ -1,4 +1,4 @@
-//--Sound Variables / Button Variables / Variables
+//---------------------------Sound Variables / Button Variables / Variables
 const greenBtnSound = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
 const yellowBtnSound = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3");
 const redBtnSound = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3");
@@ -17,18 +17,18 @@ const gameboard = ['green', 'yellow', 'blue', 'red'];
 const roundStatus = document.querySelector('.round-status');
 const totalRound = 20;
 const animationDuration = 500;
-
+//----------------simonMemory is [], counterRound is 1, thisSequence is 0/ Strict is false on default / Sound is on
 let simonMemory, counterRound, thisSequence;
 let strict = false;
 let sound = true;
-
+//-----------------------------------------level difficulty round, sound and animation speed
 const levels = {
   round1: {roundSpeed: 1000, soundSpeed: 0.75, animateSpeed: '0.75s'},
   round5: {roundSpeed: 800, soundSpeed: 1.0, animateSpeed: '0.65s'},
   round10: {roundSpeed: 600, soundSpeed: 1.25, animateSpeed: '0.55s'},
-  round15: {roundSpeed: 500, soundSpeed: 1.30, animateSpeed: '0.50s'},
+  round15: {roundSpeed: 575, soundSpeed: 1.30, animateSpeed: '0.525s'},
 };
-//--Mouseover and mouseout function on buttons which are pulsing
+//------------------------Mouseover and mouseout function on buttons which are pulsing
 for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener('mouseover', function() {
     btn[i].classList.add('animated', 'infinite', 'pulse')
@@ -40,7 +40,7 @@ for (let i = 0; i < btn.length; i++) {
     //--console.log("mouseout");
   });
 }
-
+//--------------------------------------------levels adjusted 
 function setDifficulty(setLevel) {
     for (let i = 0; i < panels.length; i++) {
     panels[i].style.webkitAnimationDuration = setLevel.animateSpeed;
@@ -50,7 +50,7 @@ function setDifficulty(setLevel) {
     playbackSpeed = setLevel.soundSpeed;
 };
 
-//--Volume ON/OFF
+//---------------------------------------------Volume ON/OFF
 $(volBtn).click(function() {
     if (sound) {
         sound = false;
@@ -81,7 +81,7 @@ $(volBtn).click(function() {
 
 
 
-//--Start game 
+//---------------------------------------------------Start game / button animated
 function startGame() {
     startBtn.classList.add('animated', 'rubberBand');
     startBtn.classList.add('on');
@@ -100,7 +100,7 @@ function startGame() {
     allowClickEvent()
 };
 
-//--Strict mode
+//---------------------------------------------------Strict mode / button animated
   function strictMode() {
     if (strict) {
     strict = false;
@@ -119,14 +119,14 @@ function startGame() {
     console.log("Strict", strict)
   }
 };
-//--Colour panels green, yellow, blue, green by id
+//-----------------------------------Colour panels green, yellow, blue, green by id
 function getPanel() {
     const color = this.getAttribute('id');
     lightUp(color);
     playSound(color);
     checkPattern(color);
 }
-//--Allow and Block Click
+//--------------------------------------Allow and Block Click
 function allowClickEvent() {
     for (let i = 0; i < panels.length; i++) {
     panels[i].addEventListener('click', getPanel);
@@ -139,14 +139,14 @@ function blockClickEvent() {
   }
 };
 
-//--New Round 
+//-----------------------------New Round / picks a colour from 4
 function newRound() {
     const randomNum = Math.floor(Math.random() * 4);
     simonMemory.push(gameboard[randomNum]);
     animate(simonMemory);
 };
 
-//--Animate array sequence
+//-------------------------Animate array sequence
 function animate(sequence) { 
     sendStatus('SIMON SAYS...');
     var i = 0;
@@ -161,7 +161,7 @@ function animate(sequence) {
   }, roundSpeedDuration);
 
 }
-//--Status Bar Switch Statement
+//----------------------------------Status Bar Switch Statement
 function sendStatus(str) {
     statusBox.innerHTML = str
     switch (str) {
@@ -188,7 +188,7 @@ function sendStatus(str) {
       break;
   }
 };
-//--Light Up 
+//------------------------------Light Up and animate colour panels
 function lightUp(panel) { 
         var thisPanel = document.getElementById(panel);
         thisPanel.classList.add('lit');
@@ -201,7 +201,7 @@ function lightUp(panel) {
 };
 
 
-//-- Play Sound
+//-------------------------------- Colour Panel sound
 function playSound(word) { 
         const audio = document.querySelector(`audio[data-key="${word}"]`);
         audio.currentTime = 0;
@@ -210,19 +210,19 @@ function playSound(word) {
   }
     audio.play();
 };
-//--When Error
+//----------------------------When Error Sound
 function playWrongSound() { 
         const audio = wrongSound;
         audio.currentTime = 0;
         audio.play();
 };
-//--When Win Sound
+//-------------------------------------When Win Sound
 function playWinSound() {
         const audio = winSound;
         audio.currentTime = 0;
         audio.play();
 };
-//--Levels breakpoints 5/10/15
+//------------------------------Levels breakpoints 5/10/15
 function checkRound(thisRound) {
         if (thisRound == 5) {
         setDifficulty(levels.round5)
@@ -233,9 +233,9 @@ function checkRound(thisRound) {
     }   else if (thisRound == 15) {
         setDifficulty(levels.round15)
     }
-        roundStatus.innerHTML = 'ROUND ' + counterRound;
+        roundStatus.innerHTML = 'ROUND ' + counterRound; //----------Round status 1-20
 };
-//--Animate Round
+//--------------------------Animate Round Status
 function animateRound(correct) {
         if (correct) { 
         roundStatus.classList.add('correct', 'animated', 'wobble');
@@ -250,7 +250,7 @@ function animateRound(correct) {
     },  animationDuration);  
     }   blockClickEvent();
 }; 
-//-- Check Pattern
+//------------------------------------ Check Pattern if statement
 function checkPattern(thisPanel) {
         let correct = true;
         if (simonMemory[thisSequence] == thisPanel) {

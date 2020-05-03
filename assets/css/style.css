@@ -1,3 +1,4 @@
+/*Alfa Slab One font family from google*/
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 
 body {
@@ -9,7 +10,7 @@ body {
   text-shadow: black 1px 0 10px; 
   height: auto;
   }
-
+/* Font size responsiveness */
   @media (min-width: 320px) {
     body {
       font-size: 14px;
@@ -33,6 +34,7 @@ body {
 
  /* Header */
 
+/*Instruction and Volume button styling*/
 .nav-wrapper .btn {
   color: #63e38a;
   margin-top: 5px;
@@ -57,7 +59,7 @@ body {
     margin-top: 10px;
     padding: 0;
 }
-
+/* Game name styling*/
 .nav-heading {
     margin: 0;
 }
@@ -77,7 +79,7 @@ i {
 }
 
 /* Container */
-
+/* Start button - Round status - Strict mode styling*/
 .container {
   overflow: hidden;
   margin: 0 auto;
@@ -93,7 +95,7 @@ i {
  .nav {
   display: inline-block; 
   }
-
+/* Start button - Round status - Strict mode responsiveness*/
   @media (min-width: 320px) {
     .nav {
       margin: 5px 5px; } 
@@ -148,7 +150,7 @@ i {
   margin-bottom: 15px;
   position: relative; 
   }
-
+/* Gameboard responsiveness*/
   @media (min-width: 320px) {
     .gameboard {
       width: 295px;
@@ -172,7 +174,7 @@ i {
        width: 420px;
        height: 420px;} 
       }
-
+/* Colour panels styling*/
 .panel {
   border-radius: 100%;
   display: inline-block;
@@ -183,7 +185,7 @@ i {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
    }
 
-
+/* Colour panels responsiveness*/
   @media (min-width: 320px) {
     .panel {
       width: 120px;
@@ -205,7 +207,7 @@ i {
       border: 10px solid; }
        }
 
-/* Green / Yellow / Red / Blue Panels */
+/* Green / Yellow / Red / Blue Panels styling*/
 
 .panel#yellow {
     padding: 5px;
@@ -232,7 +234,7 @@ i {
     left: 0;
     border-color: #3c7de6;
 }
-
+/* Colour panels lit */
 .panel#green:active, .panel.lit#green {
     background-color: rgba(52, 168, 83, 0.75);
    }
@@ -257,7 +259,7 @@ i {
     margin-bottom: 5px;
     margin: 0 auto;
   }
-
+/* Status bar responsiveness*/
 @media (min-width: 320px) {
     .status-bar {
     font-size: 13px; }
