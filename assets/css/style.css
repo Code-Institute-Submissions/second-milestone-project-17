@@ -78,9 +78,8 @@ i {
     font-size: 80%;
 }
 
-i:active, i:focus {
-    outline: none;
-    
+i:focus, i:active {
+    outline: none !important;
 }
 
 
@@ -178,7 +177,7 @@ i:active, i:focus {
   @media (min-width: 1024px) {
     .gameboard {
        width: 420px;
-       height: 420px;} 
+       height: 400px;} 
       }
 /* Colour panels styling*/
 .panel {
