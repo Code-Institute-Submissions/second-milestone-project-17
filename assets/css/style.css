@@ -1,16 +1,16 @@
 /*Alfa Slab One font family from google*/
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 
-body {
+
+html, body {
   margin: 0;
   overflow: hidden;
   font-family: "Alfa Slab One", "sans-serif";
   background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/tweed.png");
   color: #fff;
   text-shadow: black 1px 0 10px; 
-  height: auto;
   }
-/* Font size responsiveness */
+/* Font size and height responsiveness */
   @media (min-width: 320px) {
     body {
       font-size: 14px;
@@ -76,6 +76,11 @@ a:hover {
 
 i {
     font-size: 80%;
+}
+
+i:active, i:focus {
+    outline: none;
+    
 }
 
 
@@ -283,6 +288,7 @@ i {
 
 /* Footer */
 
+
 .footer-text {
     font-family: "Alpha Slab One", sans-serif;
     font-size: 50%;
@@ -290,9 +296,8 @@ i {
     text-align: center;
     position: absolute;
     right: 0;
-    bottom: 0;
     left: 0;
-    padding: 35px;
+    padding: 30px 0px 5px 0px;
     
  }
 
