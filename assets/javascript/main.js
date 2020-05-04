@@ -21,7 +21,7 @@ const levels = {
   round1: {roundSpeed: 1000, soundSpeed: 0.75},
   round5: {roundSpeed: 800, soundSpeed: 1.0},
   round10: {roundSpeed: 600, soundSpeed: 1.25},
-  round15: {roundSpeed: 575, soundSpeed: 1.30},
+  round15: {roundSpeed: 565, soundSpeed: 1.30},
 };
 //----------------------------Mouseover and mouseout function on buttons which are pulsing
 for (let i = 0; i < btn.length; i++) {
