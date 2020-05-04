@@ -171,7 +171,7 @@ i:focus, i:active {
  @media (min-width: 768px) {
     .gameboard {
       width: 360px;
-      height: 360px; }
+      height: 355px; }
        }      
 
   @media (min-width: 1024px) {
@@ -202,6 +202,13 @@ i:focus, i:active {
     .panel {
       width: 135px;  
       height: 135px;
+      border: 9px solid; } 
+      }
+
+    @media (min-width: 768px) {
+    .panel {
+      width: 155px;  
+      height: 155px;
       border: 9px solid; } 
       }
 
