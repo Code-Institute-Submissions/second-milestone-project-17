@@ -267,24 +267,24 @@ i:focus, i:active {
 
 .status-bar {
     text-align: center;  
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
     margin: 0 auto;
   }
 /* Status bar responsiveness*/
 @media (min-width: 320px) {
     .status-bar {
-    font-size: 13px; }
+    font-size: 12px; }
        }
 
 @media (min-width: 369px) {
     .status-bar {
-    font-size: 15px; }
+    font-size: 14px; }
        }
 
 @media (min-width: 768px) {
     .status-bar {
-    font-size: 16px; } 
+    font-size: 15px; } 
       }
 
 @media (min-width: 1024px) {
@@ -303,7 +303,7 @@ i:focus, i:active {
     position: absolute;
     right: 0;
     left: 0;
-    padding: 20px 0px 3px 0px;
+    padding: 10px 0px 2px 0px;
     
  }
 
