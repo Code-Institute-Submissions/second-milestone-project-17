@@ -177,7 +177,7 @@ i:focus, i:active {
   @media (min-width: 1024px) {
     .gameboard {
        width: 400px;
-       height: 375px;} 
+       height: 370px;} 
       }
 /* Colour panels styling*/
 .panel {
@@ -303,7 +303,7 @@ i:focus, i:active {
     position: absolute;
     right: 0;
     left: 0;
-    padding: 30px 0px 5px 0px;
+    padding: 20px 0px 3px 0px;
     
  }
 
