@@ -69,6 +69,8 @@ Most of the renditions I saw seemed to me a circular user interface (UI) which c
 
 I wanted to use animations as much as I can and clear/modern colorful design. This is my reasoning why I chose that particular UI design.
 I've also chosen to leave "air" between layout to make it easier for the user to interact with the game controls.
+I do really like the well balanced colorful design. That is why I picked these colours.
+
 
 ### Wireframes
 
@@ -247,6 +249,7 @@ To run my code locally, users can download a local copy of my code to their desk
 ### Media
 
 - To convert the logo to a favicon, I used [Favicon](https://favicon.io/)
+- Background-image from [toptal](https://www.toptal.com/designers/subtlepatterns/)
 
 #### Sounds
 
@@ -265,4 +268,5 @@ To run my code locally, users can download a local copy of my code to their desk
 The content of this project is for educational purposes only.
 
 Best Regards, 
+
 kompeet
