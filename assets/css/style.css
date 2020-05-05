@@ -28,7 +28,8 @@ html, body {
 
   @media (min-width: 1024px) {
     body {
-      font-size: 25px; } 
+      font-size: 25px;
+      overflow-x: hidden; } 
       }
 
  /* Header */
