@@ -7,11 +7,11 @@ describe("Buttons", function() {
             let volBtn = $("#volume-btn");
         });
 
-        it("should = false", function() {
+        it("should return sound = false", function() {
             expect(sound).toBe(false);
         });
 
-        it("should = true", function() {
+        it("should return sound = true", function() {
             sound = true;
             expect(sound).toBe(true);
         });
@@ -31,6 +31,23 @@ describe("Buttons", function() {
         it("should return Game Started = true", function() {
             game = true;
             expect(game).toBe(true);
+        });
+
+    });
+    describe("Strict mode", function() {
+
+        beforeEach(function() {
+            strict = false;
+            let strictBtn = $(".strict-btn");
+        });
+
+        it("should return strict = false", function() {
+            expect(strict).toBe(false);
+        });
+
+        it("should return strict  = true", function() {
+            strict = true;
+            expect(strict).toBe(true);
         });
 
     });
