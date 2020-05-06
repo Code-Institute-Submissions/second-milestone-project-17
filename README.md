@@ -157,8 +157,8 @@ I tested all of the functions manually and used console.logs. I also used valida
 
 ### Automated Testing
 
-I tested some of my functions with Jasmine after completing my JavaScript code. 
-I didn't want to spend too much time on Jasmine by using it to test all my functions as I was completely new to JavaScript and Jasmine at the beginning of this project.
+I tested a couple of functions with Jasmine after completing my JavaScript code. 
+I didn't want to spend too much time on Jasmine by using it as I was completely new to JavaScript and Jasmine at the beginning of this project.
 
 The links to my Jasmine testing suite files are below:
 - HTML test page to run tests from - [indexTest.html](https://github.com/kompeet/second-milestone-project/blob/master/assets/testing/indexTest.html)
