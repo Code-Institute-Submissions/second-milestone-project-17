@@ -27,12 +27,10 @@ const levels = {
 for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener('mouseover', function() {
     btn[i].classList.add('animated', 'infinite', 'pulse')
-    //--console.log("mouseover");
   });
 
     btn[i].addEventListener('mouseout', function() {
     btn[i].classList.remove('animated', 'infinite', 'pulse')
-    //--console.log("mouseout");
   });
 }
 //-----------------------------levels adjusted 
