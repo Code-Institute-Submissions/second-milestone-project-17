@@ -9,9 +9,9 @@
 - [**About**](#About)
   - [Why This Project?](#Why-This-Project)
 - [**UX**](#UX)
-  - [User Stories](#User-Stories)
+  - [User Goals](#User-Goals)
   - [Research](#Research)
-  - [Style Rationale](#Style-Rationale)
+  - [Style](#Style)
   - [Wireframes](#Wireframes)
 - [**Features**](#Features)
   - [Functionality](#Functionality)
@@ -26,7 +26,7 @@
   - [Run Jasmine Tests](#Run-Jasmine-Tests)
   - [Create Jasmine Tests](#Create-Jasmine-Tests)
   - [HTML And CSS Validation](#HTML-And-CSS-Validation)
-  - [Bugs Or Problems](#Interesting-Bugs-Or-Problems)
+  - [Bugs Or Problems](#Bugs-Or-Problems)
 - [**Deployment**](#Deployment)
   - [Repository Link](#Repository-Link)
   - [Running Code Locally](#Running-Code-Locally)
@@ -49,7 +49,7 @@ There was a choice of three different projects. Choosing this project would enab
 
 ## UX
 
-### User Stories
+### User Goals
 
 - I want to be presented with a random series of button presses.
 - When I input the correct series of button presses I want the same series of button presses to be shown in the next round but with an additional button press added to the series.
@@ -65,7 +65,7 @@ There was a choice of three different projects. Choosing this project would enab
 To understand the game, I researched existing renditions of the  game which gave me an idea of the layout and functionality that those renditions were using. This gave me some insight into what options I could implement within my rendition of the game and helped me to plan for my project.
 Most of the renditions I saw seemed to me a circular user interface (UI) which contained all the game's controls within it. 
 
-### Style Rationale
+### Style
 
 I wanted to use animations as much as I can and clear/modern colorful design. This is my reasoning why I chose that particular UI design.
 I've also chosen to leave "air" between layout to make it easier for the user to interact with the game controls.
@@ -194,9 +194,9 @@ I was testing across different platforms and web browsers in order to make sure 
 
 - There is a sound delay on Safari. I could not sort it out.
 - Volume button and startGame do not work on Internet Explorer
-- "i" and "volume" buttons while focusing have that blue highlighted border. I tried to find the solution with *:focus {outline: none !important;}* but did not work.
-- I was unable to override Bootstrap modal CSS. Needed to debug with this code: *body .modal-backdrop.fade.in {z-index: 0 !important;}*
-- 
+- "i" and "volume" buttons while focusing have that blue highlighted border. I tried to find the solution with `:focus {outline: none !important;}` but did not work.
+- I was unable to override Bootstrap modal CSS. Needed to debug with this code: `body .modal-backdrop.fade.in {z-index: 0 !important;}`
+
 
 ## Deployment
 
