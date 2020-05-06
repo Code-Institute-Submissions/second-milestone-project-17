@@ -146,13 +146,19 @@ I drew my wireframes using Balsamiq. I have done separate wireframes to show my 
 
 ### Testing User Stories
 
+I asked friends and family to play the game as much as they can and tell me their opinion to help me how I can improve it. 
+I tested all of the functions manually and used console.logs. I also used validators to check potential errors.
+
 - *Tester 1* - "I wasn't sure when my turn to go actually was as I've never seen this game before."
 - *Tester 2* - "I like the layout. Simple but works well."
-- *Tester 3* - "What is this?" :) - "Click on the "i" button then you will see."  then he really liked it. He said "I's cool."
+- *Tester 3* - "What is this?" :) - "Click on the "i" button then you will see."  then he really liked it. He said "It's cool."
 - *Tester 4* - "There is a sound delay and it is a bit fast for me". She used Safari.
 - *Tester 5* - "I really like the colours."
 
 ### Automated Testing
+
+I tested some of my functions with Jasmine after completing my JavaScript code. 
+I didn't want to spend too much time on Jasmine by using it to test all my functions as I was completely new to JavaScript and Jasmine at the beginning of this project.
 
 The links to my Jasmine testing suite files are below:
 - HTML test page to run tests from - [indexTest.html](https://github.com/kompeet/second-milestone-project/blob/master/assets/testing/indexTest.html)
