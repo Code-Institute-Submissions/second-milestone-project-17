@@ -244,7 +244,7 @@ To run my code locally, users can download a local copy of my code to their desk
 
 - All text was written by me.
 - I learn a lot and received inspiration from these [video](https://www.youtube.com/watch?v=n_ec3eowFLQ), [video](https://www.youtube.com/watch?v=hdI2bqOjy3c&t=3207s).
-- [freeCodeCamp](https://www.freecodecamp.org/), [W3Schools](https://www.w3schools.com/) 
+- [freeCodeCamp](https://www.freecodecamp.org/), [W3Schools](https://www.w3schools.com/), [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/) 
 - `body .modal-backdrop.fade.in {z-index: 0 !important;}` copied from [toolset](https://toolset.com/forums/topic/unable-to-override-bootstrap-modal-css-on-initial-page-load/)
 - `Array.prototype.slice.call(document.querySelectorAll('audio')).forEach(function(audio) {audio.muted = true;});` copied from [Stack Overflow](https://stackoverflow.com/questions/14044761/how-to-mute-all-sound-in-a-page-with-js/40608925#40608925)
 
